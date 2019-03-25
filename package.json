@@ -1,0 +1,65 @@
+{
+  "name": "react-svg-loader",
+  "version": "3.0.0",
+  "private": true,
+  "description": "Optimize svg and load it as a React Component",
+  "keywords": [
+    "loader",
+    "react",
+    "react-svg-loader",
+    "webpack",
+    "webpack-loader"
+  ],
+  "homepage": "https://github.com/boopathi/react-svg-loader#readme",
+  "bugs": {
+    "url": "https://github.com/boopathi/react-svg-loader/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/boopathi/react-svg-loader.git"
+  },
+  "license": "MIT",
+  "author": "boopathi",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "gulp build",
+    "clean": "rm -rf packages/*/lib example/public coverage .nyc_output",
+    "cover": "NODE_ENV=test nyc --reporter=lcov yarn test",
+    "eslint": "eslint .",
+    "flow": "flow",
+    "lint": "yarn flow && yarn eslint",
+    "publish-master": "lerna publish -c --yes -m 'chore(nightly): publish %s'",
+    "test": "tape -r @babel/register packages/**/test/*.js | faucet",
+    "watch": "gulp watch"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-flow": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "babel-eslint": "^10.0.1",
+    "babel-plugin-add-module-exports": "^1.0.0",
+    "babel-plugin-istanbul": "^5.1.0",
+    "chalk": "^2.4.2",
+    "eslint": "^5.13.0",
+    "eslint-plugin-flowtype": "^3.4.1",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.12.4",
+    "faucet": "0.0.1",
+    "flow-bin": "^0.92.1",
+    "gulp": "^4.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-newer": "^1.4.0",
+    "gulp-util": "^3.0.8",
+    "lerna": "^3.11.1",
+    "nyc": "^13.2.0",
+    "prettier": "^1.16.4",
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1",
+    "react-test-renderer": "^16.8.1",
+    "tape": "^4.10.0",
+    "through2": "^3.0.0"
+  }
+}
